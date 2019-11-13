@@ -6,10 +6,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
+
+import static androidx.navigation.fragment.NavHostFragment.findNavController;
 
 //
 // Created by  on 2019-11-13.
@@ -27,12 +31,14 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //TODO STEP 5 - Set an OnClickListener, using Navigation.createNavigateOnClickListener()
-//        val button = view.findViewById<Button>(R.id.navigate_destination_button)
-//        button?.setOnClickListener {
-//            findNavController().navigate(R.id.flow_step_one_dest, null)
-//        }
-        //TODO END STEP 5
+        Button button = view.findViewById(R.id.navigate_destination_button);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                findNavController(HomeFragment.this).navigate(R.id.flow_step_one_dest, null);
+//            }
+//        });
+        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.flow_step_one_dest, null));
 
         //TODO STEP 6 - Set NavOptions
 //        val options = navOptions {
