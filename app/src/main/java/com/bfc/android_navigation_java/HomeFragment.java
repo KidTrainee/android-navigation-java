@@ -11,6 +11,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
 import static androidx.navigation.fragment.NavHostFragment.findNavController;
@@ -38,21 +39,20 @@ public class HomeFragment extends Fragment {
 //                findNavController(HomeFragment.this).navigate(R.id.flow_step_one_dest, null);
 //            }
 //        });
-        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.flow_step_one_dest, null));
+//        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.flow_step_one_dest, null));
 
-        //TODO STEP 6 - Set NavOptions
-//        val options = navOptions {
-//            anim {
-//                enter = R.anim.slide_in_right
-//                exit = R.anim.slide_out_left
-//                popEnter = R.anim.slide_in_left
-//                popExit = R.anim.slide_out_right
-//            }
-//        }
-//        view.findViewById<Button>(R.id.navigate_destination_button)?.setOnClickListener {
-//            findNavController().navigate(R.id.flow_step_one_dest, null, options)
-//        }
-        //TODO END STEP 6
+        view.findViewById(R.id.navigate_destination_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavOptions options = new NavOptions.Builder()
+                        .setEnterAnim(R.anim.slide_in_right)
+                        .setExitAnim(R.anim.slide_out_left)
+                        .setPopEnterAnim(R.anim.slide_in_left)
+                        .setPopExitAnim(R.anim.slide_out_right)
+                        .build();
+                findNavController(HomeFragment.this).navigate(R.id.flow_step_one_dest, null, options);
+            }
+        });
 
         //TODO STEP 7.2 - Update the OnClickListener to navigate using an action
 //        view.findViewById<Button>(R.id.navigate_action_button)?.setOnClickListener(
