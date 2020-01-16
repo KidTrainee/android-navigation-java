@@ -56,6 +56,22 @@ public class HomeFragment extends LogcatFragment {
 
         view.findViewById(R.id.navigate_action_button)
                 .setOnClickListener(Navigation.createNavigateOnClickListener(R.id.next_action, null));
+
+        view.findViewById(R.id.add_fragment_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                for (int i = 0 ; i < 10000; i++) {
+                    MainActivity.fragmentCounter = i;
+                    NavOptions options = new NavOptions.Builder()
+                            .setEnterAnim(R.anim.slide_in_right)
+                            .setExitAnim(R.anim.slide_out_left)
+                            .setPopEnterAnim(R.anim.slide_in_left)
+                            .setPopExitAnim(R.anim.slide_out_right)
+                            .build();
+                    findNavController(HomeFragment.this).navigate(R.id.flow_step_one_dest, null, options);
+                }
+            }
+        });
     }
 
     @Override

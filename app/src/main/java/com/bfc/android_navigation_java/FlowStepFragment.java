@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
 //
@@ -37,5 +39,10 @@ public class FlowStepFragment extends LogcatFragment {
 
         view.findViewById(R.id.next_button).setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.next_action));
+
+        TextView tv = view.findViewById(R.id.fragment_counter);
+        if (tv != null) {
+            tv.setText(String.valueOf(MainActivity.fragmentCounter));
+        }
     }
 }
