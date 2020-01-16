@@ -13,7 +13,7 @@ import androidx.navigation.Navigation;
 //
 // Created by  on 2019-11-13.
 //
-public class FlowStepFragment extends Fragment {
+public class FlowStepFragment extends LogcatFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

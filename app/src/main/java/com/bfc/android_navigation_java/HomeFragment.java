@@ -10,7 +10,6 @@ import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavOptions;
 import androidx.navigation.Navigation;
 
@@ -19,7 +18,7 @@ import static androidx.navigation.fragment.NavHostFragment.findNavController;
 //
 // Created by  on 2019-11-13.
 //
-public class HomeFragment extends Fragment {
+public class HomeFragment extends LogcatFragment {
 
     @Nullable
     @Override
@@ -39,7 +38,7 @@ public class HomeFragment extends Fragment {
 //                findNavController(HomeFragment.this).navigate(R.id.flow_step_one_dest, null);
 //            }
 //        });
-//        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.flow_step_one_dest, null));
+        button.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.flow_step_one_dest, null));
 
         view.findViewById(R.id.navigate_destination_button).setOnClickListener(new View.OnClickListener() {
             @Override

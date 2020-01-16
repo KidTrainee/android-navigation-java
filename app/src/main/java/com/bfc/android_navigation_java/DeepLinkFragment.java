@@ -20,7 +20,7 @@ import androidx.fragment.app.Fragment;
 
 import static androidx.navigation.fragment.NavHostFragment.findNavController;
 
-public class DeepLinkFragment extends Fragment {
+public class DeepLinkFragment extends LogcatFragment {
 
     @Nullable
     @Override
